@@ -8,15 +8,14 @@ const app = express();
 
 app.use(express.json());
 
-// Enhanced session configuration
 app.use("/customer", session({
     secret: "fingerprint_customer",
-    resave: false,  // Changed from true
-    saveUninitialized: false,  // Changed from true
+    resave: false,  
+    saveUninitialized: false,  
     cookie: {
         httpOnly: true,
         sameSite: 'strict',
-        maxAge: 3600000 // 1 hour
+        maxAge: 3600000 
     }
 }));
 
